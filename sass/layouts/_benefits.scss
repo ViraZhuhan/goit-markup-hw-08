@@ -1,0 +1,33 @@
+.benefits {
+    padding-top: 94px;
+}
+
+.wrapper {
+    display: flex;
+    gap: 30px;
+}
+
+.wrapper__inner {
+    @extend %flex-align;
+    justify-content: center;
+    width: 270px;
+    height: 120px;
+    background-color: var(--second-bg-color);
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.wrapper__icons {
+    width: 70px;
+    height: 70px;
+}
+
+.wrapper__subtitle {
+    @include font ($fw:700, $lh:1.14);
+}
+
+.wrapper__text {
+    margin-top: 10px;
+    color: var(--title-text-color);
+    @include font ();
+}

@@ -1,0 +1,191 @@
+.backdrop {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    &.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    min-width: 528px;
+    min-height: 521px;
+    background-color: var(--primary-white-color);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+}
+
+.modal__close-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-white-color);
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: border 250ms var(--timeng-function),
+        fill 250ms var(--timeng-function);
+    &:hover,
+    &:focus {
+    border: 1px solid var(--accent-color);
+    fill: var(--accent-color);
+}
+}
+
+.modal__close-icons {
+    width: 11px;
+    height: 11px;
+}
+
+.modal__heading {
+    margin-bottom: 12px;
+    @include font ($fs:20, $fw:700, $lh:1.15);
+    text-align: center;
+}
+
+.modal__wrap {
+    margin-bottom: 10px;
+    &>label {
+        margin-bottom: 4px;
+        @include font-modal ();
+        color: var(--title-text-color);
+        cursor: pointer;
+    }
+}
+
+.modal__input-group {
+    position: relative;
+    background-color: var(--primary-white-color);
+}
+
+.modal__input {
+    margin-top: 4px;
+    padding-left: 42px;
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    @include font-modal ();
+    transition: border 250ms var(--timeng-function);
+    &:required {
+    outline: transparent;
+}
+    &:valid,
+    &:hover,
+    &:focus {
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    & + svg{
+    fill: var(--accent-color);
+}
+}
+}
+
+.modal__icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    transform: translate(50%, 60%);
+    transition: fill 250ms var(--timeng-function);
+}
+
+.coment__wrap {
+    margin-bottom: 20px;
+    &>label {
+        @include font-modal ();
+        color: var(--title-text-color);
+        cursor: pointer;
+    }
+}
+
+.coment__text {
+    resize: none;
+    width: 100%;
+    height: 120px;
+    margin-top: 4px;
+    padding: 12px 16px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    @include font-modal ();
+    outline: none;
+    transition: border 250ms var(--timeng-function);
+    &:hover,
+    &:focus {
+    border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    outline: transparent;
+}
+    &::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+}
+    &:not(::placeholder-shown) {
+   border: 1px solid var(--accent-color);
+    border-radius: 4px;
+    outline: transparent;
+}
+}
+.form-politic {
+    margin-bottom: 30px;
+}
+
+.form-politic__check-hidden {
+    opacity: 0;
+}
+
+.form-politic__label {
+    @extend %flex-align;
+    justify-content: center;
+    color: var(--title-text-color);
+    @include font ();
+}
+
+.form-politic__check-hidden:checked+label>span {
+    background-color: var(--accent-color);
+    border: 0.2px solid var(--primary-white-color);
+    border-radius: 2px;
+    
+    &>.form-politic__checkmark {
+    fill: var(--primary-white-color);
+}
+}
+
+.form-politic__contract {
+    margin-left: 5px;
+    color: var(--accent-color);
+}
+
+.form-politic__check-available {
+    @extend %flex-align;
+    justify-content: center;
+    width: 16px;
+    height: 15px;
+    margin-right: 7px;
+    border: 2px solid var(--primary-text-color);
+    cursor: pointer;
+}
+
+.form-politic__checkmark {
+    width: 11px;
+    height: 11px;
+    fill: transparent;
+}
+
+.modal__submit-btn {
+    display: block;
+    margin: 0 auto;
+}

@@ -1,0 +1,42 @@
+@import './base/reset.scss';
+@import './base/_common.scss';
+@import './base/reset';
+@import './base/hidden';
+
+@import './utils/variables';
+@import './utils/placeholder';
+@import './utils/mixin';
+
+@import './components/container.scss';
+@import './components/btn';
+@import './components/logo';
+@import './components/title';
+@import './components/social';
+@import './components/contacts';
+
+@import './layouts/header';
+@import './layouts/hero';
+@import './layouts/benefits';
+@import './layouts/promo';
+@import './layouts/team';
+@import './layouts/clients';
+@import './layouts/footer';
+@import './layouts/modal';
+
+@import './layouts/preview';
+
+
+
+
+/* ---------Універсальні класи--------- */
+
+/* ---------стилі для index.html--------- */
+/*--------- Хедер--------- */
+/*--------- Герой--------- */
+/*--------- Переваги--------- */
+/*--------- Напрямки діяльності та Команда та Клієнти---------*/
+/*--------- Футер---------*/
+/*--------- Бекдроп та модальне вікно--------- */
+
+/*--------- стилі для portfolio.html--------- */
+/*--------- Приклади--------- */

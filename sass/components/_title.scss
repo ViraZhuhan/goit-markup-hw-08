@@ -1,0 +1,6 @@
+.title {
+    display: block;
+    text-align: center;
+    font-family: var(--font-all);
+    @include font-title ();
+}

@@ -1,0 +1,37 @@
+.clients {
+    padding: 94px 0;
+}
+.clients__title {
+  margin-bottom: 50px;  
+}
+
+.clients__list {
+    display: flex;
+    gap: 30px;
+}
+
+.clients__link {
+    @extend %flex-align;
+    justify-content: center;
+    padding: 16px 32px;
+    border: 1px solid var(--icons-color);
+    border-radius: 4px;
+    fill: var(--icons-color);
+    transition: fill 250ms var(--timeng-function),
+        border 250ms var(--timeng-function);
+
+    &:hover,
+    &:focus {
+    fill: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+}
+
+.clients__items {
+    width: 170px;
+    height: 92px;
+}
+
+.clients__icons {
+    height: 60px;
+}

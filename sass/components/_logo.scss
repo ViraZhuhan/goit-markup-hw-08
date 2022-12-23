@@ -1,0 +1,22 @@
+.logo {
+    display: block;
+    font-family: var(--font-logo);
+    @include font-logo();
+    text-decoration: none;
+    padding-top: 24px;
+    padding-bottom: 25px;
+    transition: color 250ms var(--timeng-function);
+}
+
+.logo--dark-color {
+    color: var(--primary-logo-color);
+}
+
+.logo--light-color {
+    color: var(--primary-white-color);
+    padding: 0;
+}
+
+.logo__span {
+    color: var(--accent-color);
+}

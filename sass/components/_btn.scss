@@ -1,0 +1,17 @@
+.btn {
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 32px;
+    font-family: inherit;
+    background-color: var(--accent-color);
+    color: var(--primary-white-color);
+    @include font (16, 700, 1.88, 0.06);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    transition: background-color 250ms var(--timeng-function);
+
+    &:hover,
+    &:focus {
+        background-color: var(--accent-btn-color);
+    }
+}
