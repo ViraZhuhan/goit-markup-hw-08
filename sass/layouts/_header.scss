@@ -13,12 +13,17 @@
 }
 
 .navigation__list {
-    @extend %flex-align;
+    display: none;
+    @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
     margin-left: auto;
-    gap: 50px;
+    gap: 50px;}
 }
 
 .navigation__link {
+    display: none;
+    @media screen and (min-width: $tablet) {
     position: relative;
     padding: 32px 0;
     color: var(--primary-text-color);
@@ -29,6 +34,7 @@
     &:focus {
         color: var(--accent-color);
     }
+}
 }
 
 .current {
