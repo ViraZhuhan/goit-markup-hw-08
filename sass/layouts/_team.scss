@@ -12,7 +12,6 @@
             margin-bottom: 30px; 
         }
     }
-
 }
 
 .team__title {
@@ -51,8 +50,13 @@
     width: 100%;
     margin-bottom: 30px;}
 
+    @media screen and (max-width: 767px) {
+        &:not(:last-child) {
+        margin-bottom: 30px;}
+    }
+
     @media screen and (max-width: 1199px) {
-        &:not(:nth-child(n+3)) {
+        &:not(:nth-child(-n+2)) {
         margin-bottom: 30px;}
     }
 

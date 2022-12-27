@@ -1,8 +1,19 @@
 .clients {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    
+    @media screen and (min-width: $desktop) {
     padding: 94px 0;
+    }
 }
 .clients__title {
-  margin-bottom: 50px;  
+    margin-bottom: 30px;  
+    @include font-title($fs:28, $lh:1.18);
+
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 50px;  
+        @include font-title();
+    }
 }
 
 .clients__list {
@@ -28,8 +39,16 @@
 }
 
 .clients__items {
-    width: 170px;
+    width: calc((100% - 60px)/2);
     height: 92px;
+    
+    @media screen and (min-width: $tablet) {
+        width: calc((100% - 90px)/3);
+    }
+
+    @media screen and (min-width: $desktop) {
+        width: calc((100% - 180px)/6);
+    }
 }
 
 .clients__icons {
