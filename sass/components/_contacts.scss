@@ -1,6 +1,9 @@
 .contacts {
+    display: none;
+    @media screen and (min-width: $tablet) {
     display: flex;
     gap: 30px;
+    }
 }
 
 .contacts__link {
