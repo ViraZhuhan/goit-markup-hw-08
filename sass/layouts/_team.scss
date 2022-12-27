@@ -1,7 +1,6 @@
 .team {
     background: var(--second-bg-color);
-    padding-top: 60px;
-    padding-bottom: 60px;
+    padding: 60px 0;
     
     @media screen and (min-width: $desktop) {
     padding: 94px 0;
