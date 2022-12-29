@@ -16,11 +16,19 @@
 }
 
 .clients__list {
-    display: flex;
-    gap: 30px;
+    @media screen and (min-width: $mobile) {
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    @media screen and (min-width: $desktop) {
+        flex-wrap: nowrap;
+    }
 
 }
-.clients__items {
+.clients__item {
     width: calc((100% - 60px) / 2);
     
     @media screen and (min-width: $tablet) {
