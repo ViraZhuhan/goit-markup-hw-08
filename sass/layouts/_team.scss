@@ -29,7 +29,7 @@
     @media screen and (min-width: $tablet) {
     display: flex;
     gap: 30px;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 

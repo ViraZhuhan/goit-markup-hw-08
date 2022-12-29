@@ -19,24 +19,23 @@
     @media screen and (min-width: $mobile) {
         display: flex;
         gap: 30px;
-        justify-content: space-between;
         flex-wrap: wrap;
     }
-    
     @media screen and (min-width: $desktop) {
         flex-wrap: nowrap;
     }
 
 }
 .clients__item {
-    width: calc((100% - 60px) / 2);
-    
+    @media screen and (min-width: $mobile) {
+    width: calc((100% - 30px) / 2);
+    }
     @media screen and (min-width: $tablet) {
-        width: calc((100% - 90px) / 3);
+        width: calc((100% - 60px) / 3);
     }
 
     @media screen and (min-width: $desktop) {
-        width: calc((100% - 180px) / 6);
+        width: calc((100% - 150px) / 6);
     }
     
     @media screen and (max-width: 767px) {

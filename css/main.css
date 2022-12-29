@@ -414,7 +414,7 @@ ul {
   .wrapper {
     display: flex;
     gap: 30px;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
 }
@@ -561,7 +561,7 @@ ul {
   .card {
     display: flex;
     gap: 30px;
-    justify-content: center;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
 }
@@ -655,7 +655,6 @@ ul {
   .clients__list {
     display: flex;
     gap: 30px;
-    justify-content: space-between;
     flex-wrap: wrap;
   }
 }
@@ -665,17 +664,19 @@ ul {
   }
 }
 
-.clients__item {
-  width: calc((100% - 60px) / 2);
+@media screen and (min-width: 480px) {
+  .clients__item {
+    width: calc((100% - 30px) / 2);
+  }
 }
 @media screen and (min-width: 768px) {
   .clients__item {
-    width: calc((100% - 90px) / 3);
+    width: calc((100% - 60px) / 3);
   }
 }
 @media screen and (min-width: 1200px) {
   .clients__item {
-    width: calc((100% - 180px) / 6);
+    width: calc((100% - 150px) / 6);
   }
 }
 @media screen and (max-width: 767px) {
@@ -710,25 +711,58 @@ ul {
   background: var(--primary-bg-color);
   padding: 60px 0;
 }
-.footer .container {
-  display: flex;
-  align-items: baseline;
+@media screen and (min-width: 480px) {
+  .footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+}
+@media screen and (min-width: 768px) {
+  .footer .container {
+    flex-direction: row;
+    align-items: baseline;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer .container:nth-child(2) {
+    margin-bottom: 60px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer .container {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 93px;
+  }
 }
 
-.footer__wrap:first-child {
-  margin-right: 70px;
+.footer__wrap {
+  margin: 0 auto;
+  text-align: center;
 }
-
-.footer__wrap:nth-child(2) {
-  margin-right: auto;
+@media screen and (min-width: 1200px) {
+  .footer__wrap:nth-child(2) {
+    margin-right: auto;
+  }
 }
 
 .address-wrap > li:not(:last-child) {
-  margin-bottom: 9px;
+  margin-bottom: 12px;
 }
 
-.footer__logo {
-  margin-bottom: 20px;
+@media screen and (min-width: 480px) {
+  .footer__logo {
+    margin-bottom: 28px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .footer__logo {
+    margin-bottom: 20px;
+  }
 }
 
 .address-wrap__address,
@@ -739,7 +773,7 @@ ul {
   text-decoration: none;
   font-size: 14px;
   font-weight: 400;
-  line-height: 1.71;
+  line-height: 1.14;
   letter-spacing: 0.03em;
   transition: color 250ms var(--timeng-function);
 }
@@ -748,13 +782,19 @@ ul {
 .address-wrap__contacts:focus {
   color: var(--accent-color);
 }
+@media screen and (min-width: 1200px) {
+  .address-wrap__address,
+.address-wrap__contacts {
+    margin-bottom: 0px;
+  }
+}
 
 .address-wrap__contacts {
   color: var(--footer-contact-color);
 }
 
 .join {
-  display: inline-block;
+  display: block;
   font-size: 14px;
   font-weight: 700;
   line-height: 1.14;
@@ -762,6 +802,12 @@ ul {
   text-transform: uppercase;
   color: var(--primary-white-color);
   margin-bottom: 20px;
+  text-align: center;
+}
+@media screen and (min-width: 1200px) {
+  .join {
+    text-align: left;
+  }
 }
 
 .footer__wrap-text {
@@ -772,24 +818,44 @@ ul {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: var(--primary-white-color);
+  text-align: center;
+}
+@media screen and (min-width: 1200px) {
+  .footer__wrap-text {
+    text-align: left;
+  }
 }
 
 .newsletter-form {
   display: flex;
-  justify-content: flex-end;
-  margin-left: auto;
-  gap: 12px;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 20px;
+}
+@media screen and (min-width: 1200px) {
+  .newsletter-form {
+    justify-content: flex-end;
+    flex-direction: row;
+    margin-left: auto;
+    gap: 12px;
+  }
 }
 
 .newsletter-form__input {
   padding: 15px 16px;
-  width: 358px;
+  width: 450px;
   height: 50px;
   color: var(--primary-white-color);
   border: 1px solid rgba(255, 255, 255, 0.3);
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
   border-radius: 4px;
   background-color: var(--primary-bg-color);
+}
+@media screen and (min-width: 1200px) {
+  .newsletter-form__input {
+    width: 358px;
+  }
 }
 .newsletter-form__input::-moz-placeholder {
   font-size: 16px;
