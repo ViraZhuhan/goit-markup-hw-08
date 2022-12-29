@@ -1,26 +1,60 @@
 .footer {
     background: var(--primary-bg-color);
     padding: 60px 0;
+
+    
     & .container {
-    display: flex;
-    align-items: baseline;
-}
+        @media screen and (min-width: $mobile) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+        flex-wrap: wrap;
+        }
+
+        @media screen and (min-width: $tablet) {
+            flex-direction: row;
+            align-items: baseline;
+        }
+
+        @media screen and (max-width: calc($tablet - 1px)) {
+            &:nth-child(2) {
+                margin-bottom: 60px;
+            }
+        }
+
+        @media screen and (min-width: $desktop) {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            gap: 93px;
+        }
+    
+    }
 }
 
-.footer__wrap:first-child {
-    margin-right: 70px;
-}
+.footer__wrap {
+    margin: 0 auto;
+    text-align: center;
 
-.footer__wrap:nth-child(2) {
+   &:nth-child(2) {
+    @media screen and (min-width: $desktop) {
     margin-right: auto;
+}
+}
+
 }
 
 .address-wrap>li:not(:last-child) {
-    margin-bottom: 9px;
+    margin-bottom: 12px;
 }
 
 .footer__logo {
-    margin-bottom: 20px;
+    @media screen and (min-width: $mobile) {
+        margin-bottom: 28px;
+    }
+    @media screen and (min-width: $desktop) {
+    margin-bottom: 20px;}
 }
 
 .address-wrap__address,
@@ -29,25 +63,35 @@
     color: var(--primary-white-color);
     font-style: normal;
     text-decoration: none;
-    @include font ();
+    @include font ($lh:1.14);
     transition: color 250ms var(--timeng-function);
 &:hover,
 &:focus {
     color: var(--accent-color);
 }
+
+@media screen and (min-width: $desktop) {
+    margin-bottom: 0px;
 }
 
+}
 .address-wrap__contacts {
     color: var(--footer-contact-color);
 }
 
 
 .join {
-    display: inline-block;
+    display: block;
     @include font ($fw:700, $lh:1.14);
     text-transform: uppercase;
     color: var(--primary-white-color);
     margin-bottom: 20px;
+    text-align: center;
+    
+    @media screen and (min-width: $desktop) {
+        text-align: left;
+    }
+
 }
 
 .footer__wrap-text {
@@ -55,24 +99,41 @@
     @include font ($fw:700, $lh:1.14);
     text-transform: uppercase;
     color: var(--primary-white-color);
+    text-align: center;
+    
+    @media screen and (min-width: $desktop) {
+        text-align: left;
+    }
 }
 
 .newsletter-form {
     display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 20px;
+
+    @media screen and (min-width: $desktop) {
     justify-content: flex-end;
+    flex-direction: row;
     margin-left: auto;
     gap: 12px;
-}
+}}
 
 .newsletter-form__input {
     padding: 15px 16px;
-    width: 358px;
+    width: 450px;
     height: 50px;
     color: var(--primary-white-color);
     border: 1px solid rgba(255, 255, 255, 0.3);
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
     background-color: var(--primary-bg-color);
+
+    @media screen and (min-width: $desktop) {
+    width: 358px;
+    }
+
     &::placeholder {
         font-size: 16px;
         line-height: 1.25;
