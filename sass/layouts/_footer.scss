@@ -40,9 +40,14 @@
 .footer__wrap {
     text-align: center;
 
+    @include desktop {
+        text-align: start;
+    }
+
     &:nth-child(2) {
         @include desktop {
             margin-right: auto;
+           
         }
     }
 }

@@ -945,6 +945,11 @@ ul {
   text-align: center;
 }
 @media screen and (min-width: 1200px) {
+  .footer__wrap {
+    text-align: start;
+  }
+}
+@media screen and (min-width: 1200px) {
   .footer__wrap:nth-child(2) {
     margin-right: auto;
   }
