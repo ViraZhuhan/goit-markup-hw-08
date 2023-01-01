@@ -3,13 +3,17 @@
 }
 
 .header__wrap {
+    position: relative;
         display: flex;
         gap: 93px;
+        justify-content: space-between;
 }
 
 .nav-wrap {
     @extend %flex-align;
-    gap: 114px;
+    gap: 70px;
+    justify-content: space-between;
+
     @include desktop {
     gap: 300px;
     }  
@@ -56,6 +60,10 @@
             border-radius: 2px;
         }
     }
+}
+
+.header__contacts {
+    margin-left: auto;
 }
 
 .mail-icons {

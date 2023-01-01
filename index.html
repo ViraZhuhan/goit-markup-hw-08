@@ -48,14 +48,15 @@
                         </svg>+38 096 111 11 11</a></li>
             </ul>
         </div>
-          </div>
            <!-- Мобільне меню -->  
-          <button class="menu-toggle menu-open">
+          
+           <button class="menu-toggle menu-open">
             <svg class="menu-open__icon" widht="24" height="16">
                 <use href="./images/icons.svg#icon-mob-menu"></use>
             </svg>
         </button>
-
+    
+ </div>
         <div class="mob-menu" id="mobile-menu">
             <nav class="mob-navigation">
                 <ul class="mob-navigation__list list">
@@ -390,6 +391,7 @@
     <!-- Футер -->
     <footer class="footer">
         <div class="container">
+            <div class="footer__wrap-desktop">
             <div class="footer__wrap">
                 <a class="logo logo--light-color footer__logo" href="./index.html"><span class="logo__span">Web</span>Studio</a>
                 <address>
@@ -428,6 +430,7 @@
                         </a></li>
                 </ul>
             </div>
+        </div>
             <div class="footer__wrap">
                 <p class="footer__wrap-text">Підпишіться на розсилку</p>
                 <form class="newsletter-form">
@@ -492,17 +495,20 @@
                         placeholder="Введіть коментар"></textarea>
                 </div>
                 <div class="form-politic">
+                    <div class="form-politi__wrap-chek">
                     <input class="form-politic__check-hidden visually-hidden" type="checkbox" id="politic">
-
-                    <label class="form-politic__label" for="politic">
+                    <label class="form-politic__label" for="politic">                      
                         <span class="form-politic__check-available">
                             <svg class="form-politic__checkmark" width="11" height="9">
-                                <use href="./images/icons.svg#icon-checkmark"></use>
-                            </svg>
+                                <use href="./images/icons.svg#icon-checkmark"></use> 
+                            </svg>                    
                         </span>
-                        Погоджуюся з розсилкою та приймаю
+                    </div>
+                       <div class="form-politi__wrap-text">
+                        Погоджуюся з розсилкою та приймаю        
                         <a class="form-politic__contract" href="#">Умови договору</a>
                     </label>
+                </div>
                 </div>
                 <button type="submit" class="btn modal__submit-btn">Відправити</button>
             </form>

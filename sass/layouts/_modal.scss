@@ -3,8 +3,9 @@
     z-index: 1;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+
     background-color: rgba(0, 0, 0, 0.2);
 
     &.is-hidden {
@@ -19,13 +20,17 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 40px;
-    min-width: 450px;
+    min-width: 90vw;
     min-height: 609px;
     background-color: var(--primary-white-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
         0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+
+    @include tablet {
+        min-width: 450px;
+    }
 
     @include desktop {
         min-width: 528px;
@@ -59,8 +64,12 @@
 
 .modal__heading {
     margin-bottom: 12px;
-    @include font ($fs: 20, $fw: 700, $lh: 1.15);
+    @include font ($fs: 18, $fw: 700, $lh: 1.15);
     text-align: center;
+
+    @include tablet {
+        @include font ($fs: 20, $fw: 700, $lh: 1.15);
+    }
 }
 
 .modal__wrap {
@@ -111,7 +120,7 @@
     left: 0;
     width: 18px;
     height: 18px;
-    transform: translate(50%, 60%);
+    transform: translate(50%, 75%);
     transition: fill 250ms var(--timeng-function);
 }
 
@@ -156,6 +165,8 @@
 }
 
 .form-politic {
+    display: flex;    
+    gap: 8px;
     margin-bottom: 30px;
 }
 
@@ -164,16 +175,21 @@
 }
 
 .form-politic__label {
-    @extend %flex-align;
-    justify-content: center;
     color: var(--title-text-color);
-    @include font ($fs: 12, $lh: 1.17, $ls: 0.03);
+    @include font ($fs:12, $lh: 1.17, $ls: 0.03);
+
+    @include tablet {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include font ($fs: 12, $lh: 1.17, $ls: 0.03);
+    }
 
     @include desktop {
         @include font ();
     }
-
 }
+
 
 .form-politic__check-hidden:checked+label>span {
     background-color: var(--accent-color);
@@ -186,7 +202,6 @@
 }
 
 .form-politic__contract {
-    margin-left: 8px;
     color: var(--accent-color);
 }
 
