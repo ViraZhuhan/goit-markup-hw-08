@@ -2,20 +2,21 @@
     background: var(--primary-bg-color);
     padding: 60px 0;
 
-    
+
     & .container {
-        @media screen and (min-width: $mobile) {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        gap: 60px;
-        flex-wrap: wrap;
+        @include mobile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            flex-wrap: wrap;
         }
 
-        @media screen and (min-width: $tablet) {
+        @include tablet {
             flex-direction: row;
             align-items: baseline;
+            justify-content: center;
         }
 
         @media screen and (max-width: calc($tablet - 1px)) {
@@ -24,25 +25,22 @@
             }
         }
 
-        @media screen and (min-width: $desktop) {
+        @include desktop {
             flex-wrap: nowrap;
             justify-content: space-between;
             gap: 93px;
         }
-    
     }
 }
 
 .footer__wrap {
-    margin: 0 auto;
     text-align: center;
 
-   &:nth-child(2) {
-    @media screen and (min-width: $desktop) {
-    margin-right: auto;
-}
-}
-
+    &:nth-child(2) {
+        @include desktop {
+            margin-right: auto;
+        }
+    }
 }
 
 .address-wrap>li:not(:last-child) {
@@ -50,11 +48,11 @@
 }
 
 .footer__logo {
-    @media screen and (min-width: $mobile) {
-        margin-bottom: 28px;
+    margin-bottom: 28px;
+
+    @include desktop {
+        margin-bottom: 20px;
     }
-    @media screen and (min-width: $desktop) {
-    margin-bottom: 20px;}
 }
 
 .address-wrap__address,
@@ -63,18 +61,20 @@
     color: var(--primary-white-color);
     font-style: normal;
     text-decoration: none;
-    @include font ($lh:1.14);
+    @include font ($lh: 1.14);
     transition: color 250ms var(--timeng-function);
-&:hover,
-&:focus {
-    color: var(--accent-color);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
+
+    @include desktop {
+        margin-bottom: 0px;
+    }
+
 }
 
-@media screen and (min-width: $desktop) {
-    margin-bottom: 0px;
-}
-
-}
 .address-wrap__contacts {
     color: var(--footer-contact-color);
 }
@@ -82,26 +82,25 @@
 
 .join {
     display: block;
-    @include font ($fw:700, $lh:1.14);
+    @include font ($fw: 700, $lh: 1.14);
     text-transform: uppercase;
     color: var(--primary-white-color);
     margin-bottom: 20px;
     text-align: center;
-    
-    @media screen and (min-width: $desktop) {
+
+    @include desktop {
         text-align: left;
     }
-
 }
 
 .footer__wrap-text {
     margin-bottom: 20px;
-    @include font ($fw:700, $lh:1.14);
+    @include font ($fw: 700, $lh: 1.14);
     text-transform: uppercase;
     color: var(--primary-white-color);
     text-align: center;
-    
-    @media screen and (min-width: $desktop) {
+
+    @include desktop {
         text-align: left;
     }
 }
@@ -113,12 +112,13 @@
     margin: 0 auto;
     gap: 20px;
 
-    @media screen and (min-width: $desktop) {
-    justify-content: flex-end;
-    flex-direction: row;
-    margin-left: auto;
-    gap: 12px;
-}}
+    @include desktop {
+        justify-content: flex-end;
+        flex-direction: row;
+        margin-left: auto;
+        gap: 12px;
+    }
+}
 
 .newsletter-form__input {
     padding: 15px 16px;
@@ -130,8 +130,8 @@
     border-radius: 4px;
     background-color: var(--primary-bg-color);
 
-    @media screen and (min-width: $desktop) {
-    width: 358px;
+    @include desktop {
+        width: 358px;
     }
 
     &::placeholder {
@@ -139,6 +139,7 @@
         line-height: 1.25;
         color: rgba(255, 255, 255, 0.6);
     }
+
     &:required {
         color: var(--primary-white-color);
         border: 1px solid rgba(255, 255, 255, 0.3);
@@ -153,7 +154,7 @@
     width: 200px;
     height: 50px;
     padding: 10px 62px 10px 28px;
-    @include font ($fs:16, $fw:700, $lh:1.88, $ls:0.06);
+    @include font ($fs: 16, $fw: 700, $lh: 1.88, $ls: 0.06);
 }
 
 .newsletter-form__icons {

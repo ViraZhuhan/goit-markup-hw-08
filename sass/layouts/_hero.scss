@@ -1,37 +1,62 @@
 .hero {
-    height: 600px;
-    padding: 200px 0;
+    height: 400px;
+    padding: 118px 0;
     background-image: linear-gradient(rgba(47, 48, 58, 0.4),
             rgba(47, 48, 58, 0.4)),
-        url('../images/hero-bg.jpg');
+        url('../images/hero_bg_mob.jpg');
+
+    @include retina {
+        background-image: linear-gradient(rgba(47, 48, 58, 0.4),
+                rgba(47, 48, 58, 0.4)),
+            url('../images/hero_bg_mob-2x.jpg');
+    }
+
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    max-width: 1600px;
     margin: 0 auto;
     text-align: center;
     background-color: var(--hero-bg-color);
 
+    @include tablet {
+        background-image: linear-gradient(rgba(47, 48, 58, 0.4),
+                rgba(47, 48, 58, 0.4)),
+            url('../images/hero_bg_tabl.jpg');
+
+        @include retina {
+            background-image: linear-gradient(rgba(47, 48, 58, 0.4),
+                    rgba(47, 48, 58, 0.4)),
+                url('../images/hero_bg_tabl-2x.jpg');
+        }
+    }
+
+    @include desktop {
+        background-image: linear-gradient(rgba(47, 48, 58, 0.4),
+                rgba(47, 48, 58, 0.4)),
+            url('../images/hero_bg.jpg');
+
+        @include retina {
+            background-image: linear-gradient(rgba(47, 48, 58, 0.4),
+                    rgba(47, 48, 58, 0.4)),
+                url('../images/hero_bg-2x.jpg');
+        }
+
+        padding: 200px 0;
+        height: 600px;
+    }
 }
 
 .hero__title {
-    max-width: 696px;
+    max-width: 360px;
     text-align: center;
     margin: 0 auto;
     margin-bottom: 30px;
-
     color: var(--primary-white-color);
-    @include font (44, 900, 1.36, 0.06);
 
-   @media screen and(min-width: $mobile) {
-     max-width: 360px;
-     @include font (26, 900, 1.61, 0.06);
- 
-    }
+    @include font (26, 900, 1.61, 0.06);
 
-      @media screen and(min-width: $desktop) {
-       max-width: 1600px;
-       @include font (44, 900, 1.36, 0.06);
- 
+    @include desktop {
+        max-width: 1600px;
+        @include font (44, 900, 1.36, 0.06);
     }
 }

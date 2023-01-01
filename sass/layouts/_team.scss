@@ -1,82 +1,83 @@
 .team {
     background: var(--second-bg-color);
     padding: 60px 0;
-    
-    @media screen and (min-width: $desktop) {
-    padding: 94px 0;
+
+    @include desktop {
+        padding: 94px 0;
     }
+
     & .soc-list {
         margin-bottom: 24px;
-        @media screen and (min-width: $desktop) {
-            margin-bottom: 30px; 
+
+        @include desktop {
+            margin-bottom: 30px;
         }
     }
 }
 
 .team__title {
-    margin-bottom: 30px;  
-    @include font-title($fs:28, $lh:1.18);
+    margin-bottom: 30px;
+    @include font-title($fs: 28, $lh: 1.18);
 
-    @media screen and (min-width: $desktop) {
-        margin-bottom: 50px;  
+    @include desktop {
+        margin-bottom: 50px;
         @include font-title();
     }
-  }
+}
 
 .card {
     display: block;
 
-    @media screen and (min-width: $tablet) {
-    display: flex;
-    gap: 30px;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
+    @include tablet {
+        display: flex;
+        gap: 30px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
 
-@media screen and (min-width: $desktop) {
-    flex-wrap: nowrap;
-}
+    @include desktop {
+        flex-wrap: nowrap;
+    }
 }
 
 .card__item {
     background-color: var(--primary-white-color);
-    width: 100%;
+   
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
         0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
-    &>img {
-    width: 100%;
-    margin-bottom: 30px;}
 
-    @media screen and (max-width: 767px) {
+    @include tablet {
+        width: calc((100% - 30px)/2);
+    }
+
+    @include desktop {
+        width: calc((100% - 90px)/4);
+    }
+
+    @media screen and (max-width: calc($tablet - 1px)) {
         &:not(:last-child) {
-        margin-bottom: 30px;}
+            margin-bottom: 30px;
+        }
     }
 
-    @media screen and (max-width: 1199px) {
+    @media screen and (max-width: calc($desktop - 1px)) {
         &:not(:nth-child(-n+2)) {
-        margin-bottom: 30px;}
-    }
-
-    @media screen and (min-width: $tablet) {
-        width: calc((100% - 60px)/2);
-    }
-
-    @media screen and (min-width: $desktop) {
-        width: calc((100% - 120px)/4);
+            margin-bottom: 30px;
+        }
     }
 }
 
-
 .card__name {
+    margin-top: 30px;
     margin-bottom: 10px;
-    @include font ($fs:16, $fw:500, $lh:1.19);
+    @include font ($fs: 16, $fw: 500, $lh: 1.19);
     text-align: center;
 }
 
 .card__text {
-    @include font ($fs:16, $lh:1.19);
+    @include font ($fs: 16, $lh: 1.19);
     text-align: center;
     color: var(--title-text-color);
     margin-bottom: 16px;
@@ -85,6 +86,4 @@
 .team__social-items {
     margin-bottom: 30px;
 }
-
-
 

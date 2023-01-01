@@ -1,28 +1,24 @@
 .logo {
-    display: block;
-    font-family: var(--font-logo);
-    @include font-logo();
-    text-decoration: none;
-    padding-top: 24px;
-    padding-bottom: 25px;
-    transition: color 250ms var(--timeng-function);
-
- @media screen and(min-width: $mobile) {
-    @include font-logo ($fs:24, $lh:1.17);
     padding-top: 16px;
     padding-bottom: 16px;
- }
+    text-decoration: none;
+    font-family: var(--font-logo);
+    @include font-logo ($fs: 24, $lh: 1.17);
+    transition: color 250ms var(--timeng-function);
 
- @media screen and(min-width: $tablet) {
-    @include font-logo ($fs:24, $lh:1.17);
-    padding-top: 26px;
-    padding-bottom: 26px;
- }
- @media screen and(min-width: $desktop) {
-    @include font-logo();
-    padding-top: 24px;
-    padding-bottom: 25px;
- }
+    @include tablet {
+        padding-top: 26px;
+        padding-bottom: 26px;
+
+        @include font-logo ($fs: 24, $lh: 1.17);
+    }
+
+    @include desktop {
+        padding-top: 24px;
+        padding-bottom: 25px;
+
+        @include font-logo();
+    }
 }
 
 .logo--dark-color {

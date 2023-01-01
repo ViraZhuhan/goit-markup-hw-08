@@ -8,7 +8,7 @@
     <title>Головна</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
         integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer" >
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -23,48 +23,19 @@
 
 <body>
     <!-- Хедер -->
-
     <header class="header">
         <div class="container">
+            <div class="header__wrap">
+            <a class="logo logo--dark-color header__logo" href="./index.html"><span class="logo__span">Web</span>Studio</a>
+            <div class="nav-wrap">
             <nav class="navigation">
-                <a class="logo logo--dark-color" href="./index.html"><span class="logo__span">Web</span>Studio</a>
-
                 <ul class="navigation__list list">
                     <li><a class="navigation__link link current" href="./index.html">Студія</a></li>
                     <li><a class="navigation__link link" href="./portfolio.html">Портфоліо</a></li>
                     <li><a class="navigation__link link" href="./contacts.html">Контакти</a></li>
-                </ul>
+                </ul>          
             </nav>
-
-            <!-- <button
-            class="menu-toggle js-open-menu"
-            aria-expanded="false"
-            aria-controls="mobile-menu">
-            <svg width="24" height="16">
-                <use href="./images/icons.svg#icon-menu" class="icon-menu"></use>              
-            </svg>
-          
-        </button>
-          <div class="menu-container js-menu-container" id="mobile-menu">
-            <button class="menu-toggle js-close-menu">
-              <svg width="19" height="19">
-                <use href="./images/icons.svg#icon-close" class="icon-close"></use>
-            </svg>
-            </button>
-      
-            <ul class="mobile-menu">
-              <li class="mobile-menu__item">
-                <a class="mobile-menu__link mobile-menu__active link" href="" >Студія</a>
-              </li>
-              <li class="mobile-menu__item">
-                <a class="mobile-menu__link link" href="./portfolio.html" >Портфоліо</a>
-              </li>
-              <li class="mobile-menu__item">
-                <a class="mobile-menu__link link" href="" >Контакти</a>
-              </li>
-            </ul> -->
-
-            <ul class="contacts list">
+            <ul class="contacts list header__contacts">
                 <li>
                     <a class="contacts__link link" href="mailto:info@devstudio.com">
                         <svg width="16" hight="12" class="mail-icons link">
@@ -76,20 +47,56 @@
                             <use href="./images/icons.svg#icon-smartphone"></use>
                         </svg>+38 096 111 11 11</a></li>
             </ul>
-
-            <!-- <ul class="mobile-socials">
-                <li class="mobile-socials__item list">
-                  <a href="" class="mobile-socials__link link">Instagram</a></li>
-                <li class="mobile-socials__item list">
-                  <a href="" class="mobile-socials__link link">Twitter</a></li>
-                <li class="mobile-socials__item list">
-                  <a href="" class="mobile-socials__link link">Facebook</a></li>
-                <li class="mobile-socials__item list">
-                  <a href="" class="mobile-socials__link link">LinkedIn</a></li>
-              </ul> -->
         </div>
-    </header>
+          </div>
+           <!-- Мобільне меню -->  
+          <button class="menu-toggle menu-open">
+            <svg class="menu-open__icon" widht="24" height="16">
+                <use href="./images/icons.svg#icon-mob-menu"></use>
+            </svg>
+        </button>
 
+        <div class="mob-menu" id="mobile-menu">
+            <nav class="mob-navigation">
+                <ul class="mob-navigation__list list">
+                    <li><a class="mob-navigation__link link mob-current" href="./index.html">Студія</a></li>
+                    <li><a class="mob-navigation__link link" href="./portfolio.html">Портфоліо</a></li>
+                    <li><a class="mob-navigation__link link" href="./contacts.html">Контакти</a></li>
+                </ul>          
+            </nav>
+            <div class="mob-wrap">
+            <ul class="mob-contacts list">
+                <li> <a class="mob-contacts__tel link" href="tel:+380961111111">
+                    +38 096 111 11 11</a>
+                </li>
+                <li>
+                    <a class="mob-contacts__mail link" href="mailto:info@devstudio.com">
+                    info@devstudio.com</a>
+                </li>
+             </ul>
+             <ul class="mob-social">
+                <li class="mob-social__items"><a href="#" class="mob-social__link link">
+                        Instagram
+                    </a></li>
+                <li class="mob-social__items"><a href="#" class="mob-social__link link">
+                        Twitter
+                    </a></li>
+                <li class="mob-social__items"><a href="#" class="mob-social__link link">
+                        Facebook
+                    </a></li>
+                <li class="mob-social__items"><a href="#" class="mob-social__link link">
+                    LinkedIn
+                    </a></li>
+            </ul>
+        </div>
+            <button class="menu-toggle menu-close">
+                <svg class="menu-close__icon" widht="19" height="19">
+                    <use href="./images/icons.svg#icon-close"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    </header>
     <main>
         <!-- Герой -->
         <section class="section hero">
@@ -153,15 +160,21 @@
                 <h2 class="title promo__title">Чим ми займаємося</h2>
                 <ul class="promo__list list">
                     <li class="promo__card">
-                        <img src="./images/box-1.jpg" alt="працюють на ПК" width="370">
+                        <img 
+                        srcset="./images/box_1.jpg 1x, /images/box_1-2x.jpg 2x"
+                        src="./images/box_1.jpg" alt="працюють на ПК" width="370">
                         <p class="promo__text">Десктопні додатки</p>
                     </li>
                     <li class="promo__card">
-                        <img src="./images/box-2.jpg" alt="працюють на ноутбуці та телефоны" width="370">
+                        <img 
+                        srcset="./images/box_2.jpg 1x, /images/box_2-2x.jpg 2x"
+                        src="./images/box_2.jpg" alt="працюють на ноутбуці та телефоны" width="370">
                         <p class="promo__text">Мобільні додатки</p>
                     </li>
                     <li class="promo__card">
-                        <img src="./images/box-3.jpg" alt="малюнок на планшеті" width="370">
+                        <img 
+                        srcset="./images/box_3.jpg 1x, /images/box_3-2x.jpg 2x"
+                        src="./images/box_3.jpg" alt="малюнок на планшеті" width="370">
                         <p class="promo__text">Дизайнерські рішення</p>
                     </li>
                 </ul>
@@ -173,7 +186,17 @@
                 <h2 class="title team__title">Наша команда</h2>
                 <ul class="card list">
                     <li class="card__item">
-                        <img src="./images/foto-1.jpg" alt="фото Ігор Дем'яненко" width="270">
+                        <picture>
+                            <source srcset="./images/foto_1.jpg 1x, ./images/foto_1-2x.jpg 2x"
+                            media="(min-width:1200px)">
+                            <source srcset="./images/foto_1_tab.jpg 1x, ./images/foto_1_tab-2x.jpg 2x"
+                            media="(min-width:768px)">
+                            <source srcset="./images/foto_1_mob.jpg 1x, ./images/foto_1_mob-2x.jpg 2x"
+                            media="(min-width:480px)">            
+                            <img 
+                            srcset="./images/foto_1.jpg 1x, ./images/foto_1-2x.jpg 2x"
+                            src="./images/foto_1.jpg" alt="фото Ігор Дем'яненко" width="270" height="260">    
+                        </picture>
                         <h3 class="card__name">Ігор Дем'яненко</h3>
                         <p class="card__text">Product Designer</p>
                         <ul class="social">
@@ -200,7 +223,17 @@
                         </ul>
                     </li>
                     <li class="card__item">
-                        <img src="./images/foto-2.jpg" alt="фото Ольга Рєпіна" width="270">
+                        <picture>
+                            <source srcset="./images/foto_2.jpg 1x, ./images/foto_2-2x.jpg 2x"
+                            media="(min-width:1200px)">
+                            <source srcset="./images/foto_2_tab.jpg 1x, ./images/foto_2_tab-2x.jpg 2x"
+                            media="(min-width:768px)">
+                            <source srcset="./images/foto_2_mob.jpg 1x, ./images/foto_2_mob-2x.jpg 2x"
+                            media="(min-width:480px)">            
+                            <img 
+                            srcset="./images/foto_2.jpg 1x, ./images/foto_2-2x.jpg 2x"
+                            src="./images/foto_2.jpg" alt="фото Ольга Рєпіна" width="270" height="260">    
+                        </picture>
                         <h3 class="card__name">Ольга Рєпіна</h3>
                         <p class="card__text">Frontend Developer</p>
                         <ul class="social">
@@ -227,7 +260,17 @@
                         </ul>
                     </li>
                     <li class="card__item">
-                        <img src="./images/foto-3.jpg" alt="фото Микола Тарасов" width="270">
+                        <picture>
+                            <source srcset="./images/foto_3.jpg 1x, ./images/foto_3-2x.jpg 2x"
+                            media="(min-width:1200px)">
+                            <source srcset="./images/foto_3_tab.jpg 1x, ./images/foto_3_tab-2x.jpg 2x"
+                            media="(min-width:768px)">
+                            <source srcset="./images/foto_3_mob.jpg 1x, ./images/foto_3_mob-2x.jpg 2x"
+                            media="(min-width:480px)">            
+                            <img 
+                            srcset="./images/foto_3.jpg 1x, ./images/foto_3-2x.jpg 2x"
+                            src="./images/foto_3.jpg" alt="фото Микола Тарасов" width="270" height="260">    
+                        </picture>             
                         <h3 class="card__name">Микола Тарасов</h3>
                         <p class="card__text">Marketing</p>
                         <ul class="social">
@@ -254,7 +297,17 @@
                         </ul>
                     </li>
                     <li class="card__item">
-                        <img src="./images/foto-4.jpg" alt="фото Михайло Єрмаков" width="270">
+                        <picture>
+                            <source srcset="./images/foto_4.jpg 1x, ./images/foto_4-2x.jpg 2x"
+                            media="(min-width:1200px)">
+                            <source srcset="./images/foto_4_tab.jpg 1x, ./images/foto_4_tab-2x.jpg 2x"
+                            media="(min-width:768px)">
+                            <source srcset="./images/foto_4_mob.jpg 1x, ./images/foto_4_mob-2x.jpg 2x"
+                            media="(min-width:480px)">            
+                            <img 
+                            srcset="./images/foto_4.jpg 1x, ./images/foto_4-2x.jpg 2x"
+                            src="./images/foto_4.jpg" alt="фото Михайло Єрмаков" width="270" height="260">    
+                        </picture>
                         <h3 class="card__name">Михайло Єрмаков</h3>
                         <p class="card__text">UI Designer</p>
                         <ul class="social">
@@ -456,6 +509,13 @@
         </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+    integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+    crossorigin="anonymous"
+  ></script>
+  <script defer src="js/mobile-menu.js"></script>
 </body>
 
 </html>

@@ -6,10 +6,11 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.2);
+
     &.is-hidden {
-    opacity: 0;
-    pointer-events: none;
-}
+        opacity: 0;
+        pointer-events: none;
+    }
 }
 
 .modal {
@@ -18,13 +19,18 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 40px;
-    min-width: 528px;
-    min-height: 521px;
+    min-width: 450px;
+    min-height: 609px;
     background-color: var(--primary-white-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
         0px 1px 1px rgba(0, 0, 0, 0.14),
         0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+
+    @include desktop {
+        min-width: 528px;
+        min-height: 521px;
+    }
 }
 
 .modal__close-btn {
@@ -38,11 +44,12 @@
     border: 1px solid rgba(0, 0, 0, 0.1);
     transition: border 250ms var(--timeng-function),
         fill 250ms var(--timeng-function);
+
     &:hover,
     &:focus {
-    border: 1px solid var(--accent-color);
-    fill: var(--accent-color);
-}
+        border: 1px solid var(--accent-color);
+        fill: var(--accent-color);
+    }
 }
 
 .modal__close-icons {
@@ -52,12 +59,13 @@
 
 .modal__heading {
     margin-bottom: 12px;
-    @include font ($fs:20, $fw:700, $lh:1.15);
+    @include font ($fs: 20, $fw: 700, $lh: 1.15);
     text-align: center;
 }
 
 .modal__wrap {
     margin-bottom: 10px;
+
     &>label {
         margin-bottom: 4px;
         @include font-modal ();
@@ -80,18 +88,21 @@
     border-radius: 4px;
     @include font-modal ();
     transition: border 250ms var(--timeng-function);
+
     &:required {
-    outline: transparent;
-}
+        outline: transparent;
+    }
+
     &:valid,
     &:hover,
     &:focus {
-    border: 1px solid var(--accent-color);
-    border-radius: 4px;
-    & + svg{
-    fill: var(--accent-color);
-}
-}
+        border: 1px solid var(--accent-color);
+        border-radius: 4px;
+
+        &+svg {
+            fill: var(--accent-color);
+        }
+    }
 }
 
 .modal__icons {
@@ -106,6 +117,7 @@
 
 .coment__wrap {
     margin-bottom: 20px;
+
     &>label {
         @include font-modal ();
         color: var(--title-text-color);
@@ -124,21 +136,25 @@
     @include font-modal ();
     outline: none;
     transition: border 250ms var(--timeng-function);
+
     &:hover,
     &:focus {
-    border: 1px solid var(--accent-color);
-    border-radius: 4px;
-    outline: transparent;
-}
+        border: 1px solid var(--accent-color);
+        border-radius: 4px;
+        outline: transparent;
+    }
+
     &::placeholder {
-    color: rgba(117, 117, 117, 0.5);
-}
+        color: rgba(117, 117, 117, 0.5);
+    }
+
     &:not(::placeholder-shown) {
-   border: 1px solid var(--accent-color);
-    border-radius: 4px;
-    outline: transparent;
+        border: 1px solid var(--accent-color);
+        border-radius: 4px;
+        outline: transparent;
+    }
 }
-}
+
 .form-politic {
     margin-bottom: 30px;
 }
@@ -151,21 +167,26 @@
     @extend %flex-align;
     justify-content: center;
     color: var(--title-text-color);
-    @include font ();
+    @include font ($fs: 12, $lh: 1.17, $ls: 0.03);
+
+    @include desktop {
+        @include font ();
+    }
+
 }
 
 .form-politic__check-hidden:checked+label>span {
     background-color: var(--accent-color);
     border: 0.2px solid var(--primary-white-color);
     border-radius: 2px;
-    
+
     &>.form-politic__checkmark {
-    fill: var(--primary-white-color);
-}
+        fill: var(--primary-white-color);
+    }
 }
 
 .form-politic__contract {
-    margin-left: 5px;
+    margin-left: 8px;
     color: var(--accent-color);
 }
 

@@ -2,7 +2,7 @@
     padding-top: 60px;
     padding-bottom: 60px;
 
-    @media screen and (min-width: $desktop) {
+    @include desktop {
         padding-top: 94px;
         padding-bottom: 94px;
     }
@@ -11,30 +11,32 @@
 .wrapper {
     display: block;
 
-    @media screen and (min-width: $tablet) {
+    @include tablet {
         display: flex;
         gap: 30px;
         justify-content: space-between;
         flex-wrap: wrap;
     }
 
-    @media screen and (min-width: $desktop) {
+    @include desktop {
         flex-wrap: nowrap;
     }
 }
 
 .wrapper__item {
     width: 100%;
-    @media screen and (max-width: 767px) {
+
+    @media screen and (max-width: calc($tablet - 1px)) {
         &:not(:last-child) {
-        margin-bottom: 30px;}
+            margin-bottom: 30px;
+        }
     }
 
-    @media screen and (min-width: $tablet) {
+    @include tablet {
         width: calc((100% - 60px) / 2);
     }
 
-    @media screen and (min-width: $desktop) {
+    @include desktop {
         width: calc((100% - 120px) / 4);
     }
 }
@@ -56,7 +58,7 @@
 .wrapper__subtitle {
     @include font ($fw: 700, $lh: 1.14);
 
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: calc($tablet - 1px)) {
         text-align: center;
     }
 

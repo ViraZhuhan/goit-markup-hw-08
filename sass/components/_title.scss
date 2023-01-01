@@ -4,11 +4,11 @@
     font-family: var(--font-all);
     @include font-title ();
 
-    @media screen and(min-width: $mobile) {
-        @include font-title ($fs:28, $lh:1.18);
+    @include tablet {
+        @include font-title ($fs: 28, $lh: 1.18);
     }
 
-    @media screen and(min-width: $desktop) {
+    @include desktop {
         @include font-title ();
     }
 

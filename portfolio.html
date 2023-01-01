@@ -23,16 +23,17 @@
     <!-- Хедер -->
     <header class="header">
         <div class="container">
+            <div class="header__wrap">
+            <a class="logo logo--dark-color header__logo" href="./index.html"><span class="logo__span">Web</span>Studio</a>
+            <div class="nav-wrap">
             <nav class="navigation">
-                <a class="logo logo--dark-color" href="./index.html"><span class="logo__span">Web</span>Studio</a>
-
                 <ul class="navigation__list list">
                     <li><a class="navigation__link link" href="./index.html">Студія</a></li>
                     <li><a class="navigation__link link current" href="./portfolio.html">Портфоліо</a></li>
                     <li><a class="navigation__link link" href="./contacts.html">Контакти</a></li>
-                </ul>
+                </ul>          
             </nav>
-            <ul class="contacts list">
+            <ul class="contacts list header__contacts">
                 <li>
                     <a class="contacts__link link" href="mailto:info@devstudio.com">
                         <svg width="16" hight="12" class="mail-icons link">
@@ -45,8 +46,55 @@
                         </svg>+38 096 111 11 11</a></li>
             </ul>
         </div>
-    </header>
+          </div>
+       
+          <button class="menu-toggle menu-open">
+            <svg class="menu-open__icon" widht="24" height="16">
+                <use href="./images/icons.svg#icon-mob-menu"></use>
+            </svg>
+        </button>
 
+        <div class="mob-menu" id="mobile-menu">
+            <nav class="mob-navigation">
+                <ul class="mob-navigation__list list">
+                    <li><a class="mob-navigation__link link" href="./index.html">Студія</a></li>
+                    <li><a class="mob-navigation__link link mob-current" href="./portfolio.html">Портфоліо</a></li>
+                    <li><a class="mob-navigation__link link" href="./contacts.html">Контакти</a></li>
+                </ul>          
+            </nav>
+            <div class="mob-wrap">
+            <ul class="mob-contacts list">
+                <li> <a class="mob-contacts__tel link" href="tel:+380961111111">
+                    +38 096 111 11 11</a>
+                </li>
+                <li>
+                    <a class="mob-contacts__mail link" href="mailto:info@devstudio.com">
+                    info@devstudio.com</a>
+                </li>
+             </ul>
+             <ul class="mob-social">
+                <li class="mob-social__items"><a href="#" class="mob-social__link link">
+                        Instagram
+                    </a></li>
+                <li class="mob-social__items"><a href="#" class="mob-social__link link">
+                        Twitter
+                    </a></li>
+                <li class="mob-social__items"><a href="#" class="mob-social__link link">
+                        Facebook
+                    </a></li>
+                <li class="mob-social__items"><a href="#" class="mob-social__link link">
+                    LinkedIn
+                    </a></li>
+            </ul>
+        </div>
+            <button class="menu-toggle menu-close">
+                <svg class="menu-close__icon" widht="19" height="19">
+                    <use href="./images/icons.svg#icon-close"></use>
+                </svg>
+            </button>
+        </div>
+    </div>
+    </header>
     <main>
         <!-- Приклади -->
         <section class="preview">
@@ -62,7 +110,17 @@
                 <ul class="product-wrapper list">
                     <li class="product-wrapper__item">
                         <a href="#" class="product-wrapper__link link">                            
-                                <img src="./images/example-1.jpg" alt="Технокряк">
+                            <picture>
+                                <source srcset="../images/example_1.jpg 1x, ./images/example_1-2x.jpg 2x"
+                                media="(min-width:1200px)">
+                                <source srcset="./images/example_1_tab.jpg 1x, ./images/example_1_tab-2x.jpg 2x"
+                                media="(min-width:768px)">
+                                <source srcset="./images/example_1_mob.jpg 1x, ./images/example_1_mob-2x.jpg 2x"
+                                media="(min-width:480px)">            
+                                <img 
+                                srcset="./images/example_1.jpg 1x, ./images/example_1-2x.jpg 2x"
+                                src="./images/example_1.jpg" alt="Технокряк">    
+                            </picture>    
                                 <p class="product-wrapper__subtext"> Ресурс пропонує комплексні пропозиції з різним рівнем
                                     функціоналу
                                     та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості
@@ -75,7 +133,17 @@
                     </li>
                     <li class="product-wrapper__item">
                         <a href="#" class="product-wrapper__link link">                          
-                                <img src="./images/example-2.jpg" alt="Постер New Orlean vs Golden Star">
+                            <picture>
+                                <source srcset="../images/example_2.jpg 1x, ./images/example_2-2x.jpg 2x"
+                                media="(min-width:1200px)">
+                                <source srcset="./images/example_2_tab.jpg 1x, ./images/example_2_tab-2x.jpg 2x"
+                                media="(min-width:768px)">
+                                <source srcset="./images/example_2_mob.jpg 1x, ./images/example_2_mob-2x.jpg 2x"
+                                media="(min-width:480px)">            
+                                <img 
+                                srcset="./images/example_2.jpg 1x, ./images/example_2-2x.jpg 2x"
+                                src="./images/example_2.jpg" alt="Постер New Orlean vs Golden Star">  
+                            </picture>   
                                 <p class="product-wrapper__subtext"> Ресурс пропонує комплексні пропозиції з різним рівнем
                                     функціоналу
                                     та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості
@@ -88,7 +156,17 @@
                     </li>
                     <li class="product-wrapper__item">
                         <a href="#" class="product-wrapper__link link">                           
-                                <img src="./images/example-3.jpg" alt="Ресторан Seafood">
+                            <picture>
+                                <source srcset="../images/example_3.jpg 1x, ./images/example_3-2x.jpg 2x"
+                                media="(min-width:1200px)">
+                                <source srcset="./images/example_3_tab.jpg 1x, ./images/example_3_tab-2x.jpg 2x"
+                                media="(min-width:768px)">
+                                <source srcset="./images/example_3_mob.jpg 1x, ./images/example_3_mob-2x.jpg 2x"
+                                media="(min-width:480px)">            
+                                <img 
+                                srcset="./images/example_3.jpg 1x, ./images/example_3-2x.jpg 2x"
+                                src="./images/example_3.jpg" alt="Ресторан Seafood"> 
+                            </picture>                               
                                 <p class="product-wrapper__subtext"> Ресурс пропонує комплексні пропозиції з різним рівнем
                                     функціоналу
                                     та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості
@@ -101,7 +179,17 @@
                     </li>
                     <li class="product-wrapper__item">
                         <a href="#" class="product-wrapper__link link">                          
-                                <img src="./images/example-4.jpg" alt="Проєкт Prime">
+                            <picture>
+                                <source srcset="../images/example_4.jpg 1x, ./images/example_4-2x.jpg 2x"
+                                media="(min-width:1200px)">
+                                <source srcset="./images/example_4_tab.jpg 1x, ./images/example_4_tab-2x.jpg 2x"
+                                media="(min-width:768px)">
+                                <source srcset="./images/example_4_mob.jpg 1x, ./images/example_4_mob-2x.jpg 2x"
+                                media="(min-width:480px)">            
+                                <img 
+                                srcset="./images/example_4.jpg 1x, ./images/example_4-2x.jpg 2x"
+                                src="./images/example_4.jpg" alt="Проєкт Prime"> 
+                            </picture>  
                                 <p class="product-wrapper__subtext"> Ресурс пропонує комплексні пропозиції з різним рівнем
                                     функціоналу
                                     та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості
@@ -114,7 +202,17 @@
                     </li>
                     <li class="product-wrapper__item">
                         <a href="#" class="product-wrapper__link link">                        
-                                <img src="./images/example-5.jpg" alt="Проєкт Boxes">
+                            <picture>
+                                <source srcset="../images/example_5.jpg 1x, ./images/example_5-2x.jpg 2x"
+                                media="(min-width:1200px)">
+                                <source srcset="./images/example_5_tab.jpg 1x, ./images/example_5_tab-2x.jpg 2x"
+                                media="(min-width:768px)">
+                                <source srcset="./images/example_5_mob.jpg 1x, ./images/example_5_mob-2x.jpg 2x"
+                                media="(min-width:480px)">            
+                                <img 
+                                srcset="./images/example_5.jpg 1x, ./images/example_5-2x.jpg 2x"
+                                src="./images/example_5.jpg" alt="Проєкт Boxes"> 
+                            </picture>  
                                 <p class="product-wrapper__subtext"> Ресурс пропонує комплексні пропозиції з різним рівнем
                                     функціоналу
                                     та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості
@@ -127,7 +225,17 @@
                     </li>
                     <li class="product-wrapper__item">
                         <a href="#" class="product-wrapper__link link">                        
-                                <img src="./images/example-6.jpg" lang="en" alt="Inspiration has no Borders">
+                            <picture>
+                            <source srcset="../images/example_6.jpg 1x, ./images/example_6-2x.jpg 2x"
+                            media="(min-width:1200px)">
+                            <source srcset="./images/example_6_tab.jpg 1x, ./images/example_6_tab-2x.jpg 2x"
+                            media="(min-width:768px)">
+                            <source srcset="./images/example_6_mob.jpg 1x, ./images/example_6_mob-2x.jpg 2x"
+                            media="(min-width:480px)">            
+                            <img 
+                                srcset="./images/example_6.jpg 1x, ./images/example_6-2x.jpg 2x"
+                                src="./images/example_6.jpg" lang="en" alt="Inspiration has no Borders"> 
+                        </picture> 
                                 <p class="product-wrapper__subtext"> Ресурс пропонує комплексні пропозиції з різним рівнем
                                     функціоналу
                                     та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості
@@ -140,7 +248,17 @@
                     </li>
                     <li class="product-wrapper__item">
                         <a href="#" class="product-wrapper__link link">                           
-                                <img src="./images/example-7.jpg" alt="Видання Limited Edition">
+                            <picture>
+                                <source srcset="../images/example_7.jpg 1x, ./images/example_7-2x.jpg 2x"
+                                media="(min-width:1200px)">
+                                <source srcset="./images/example_7_tab.jpg 1x, ./images/example_7_tab-2x.jpg 2x"
+                                media="(min-width:768px)">
+                                <source srcset="./images/example_7_mob.jpg 1x, ./images/example_7_mob-2x.jpg 2x"
+                                media="(min-width:480px)">            
+                                <img 
+                                srcset="./images/example_7.jpg 1x, ./images/example_7-2x.jpg 2x"
+                                src="./images/example_7.jpg" alt="Видання Limited Edition"> 
+                            </picture>                            
                                 <p class="product-wrapper__subtext"> Ресурс пропонує комплексні пропозиції з різним рівнем
                                     функціоналу
                                     та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості
@@ -153,7 +271,17 @@
                     </li>
                     <li class="product-wrapper__item">
                         <a href="#" class="product-wrapper__link link">                         
-                                <img src="./images/example-8.jpg" alt="Проєкт LAB">
+                            <picture>
+                                <source srcset="../images/example_8.jpg 1x, ./images/example_8-2x.jpg 2x"
+                                media="(min-width:1200px)">
+                                <source srcset="./images/example_8_tab.jpg 1x, ./images/example_8_tab-2x.jpg 2x"
+                                media="(min-width:768px)">
+                                <source srcset="./images/example_8_mob.jpg 1x, ./images/example_8_mob-2x.jpg 2x"
+                                media="(min-width:480px)">            
+                                <img 
+                                srcset="./images/example_8.jpg 1x, ./images/example_8-2x.jpg 2x"
+                                src="./images/example_8.jpg" alt="Проєкт LAB"> 
+                            </picture>
                                 <p class="product-wrapper__subtext"> Ресурс пропонує комплексні пропозиції з різним рівнем
                                     функціоналу
                                     та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості
@@ -166,7 +294,17 @@
                     </li>
                     <li class="product-wrapper__item">
                         <a href="#" class="product-wrapper__link link">                          
-                                <img src="./images/example-9.jpg" alt="Ресторан Seafood">
+                            <picture>
+                                <source srcset="../images/example_9.jpg 1x, ./images/example_9-2x.jpg 2x"
+                                media="(min-width:1200px)">
+                                <source srcset="./images/example_9_tab.jpg 1x, ./images/example_9_tab-2x.jpg 2x"
+                                media="(min-width:768px)">
+                                <source srcset="./images/example_9_mob.jpg 1x, ./images/example_9_mob-2x.jpg 2x"
+                                media="(min-width:480px)">            
+                                <img 
+                                srcset="./images/example_9.jpg 1x, ./images/example_9-2x.jpg 2x"
+                                src="./images/example_9.jpg" alt="Ресторан Seafood"> 
+                            </picture>
                                 <p class="product-wrapper__subtext"> Ресурс пропонує комплексні пропозиції з різним рівнем
                                     функціоналу
                                     та сервісів. Все це дозволить відвідувачу отримати вичерпні відомості
@@ -241,6 +379,13 @@
             </div>
         </div>
     </footer>
+    <script
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+    integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+    crossorigin="anonymous"
+  ></script>
+  <script defer src="js/mobile-menu.js"></script>
 </body>
 
 </html>

@@ -1,21 +1,23 @@
 .promo {
     display: none;
-    @media screen and(min-width: $desktop) {
-         padding-top: 94px;
+
+    @include desktop {
+        display: block;
     }
 }
 
 .promo__title {
-    margin-bottom: 50px;  
-  }
+    margin-bottom: 50px;
+}
 
 .promo__list {
     display: flex;
     gap: 30px;
     background-color: var(--primary-white-color);
+
     &>img {
-    min-width: 370px;
-}
+        min-width: 370px;
+    }
 }
 
 .promo__card {
@@ -29,7 +31,7 @@
     width: 100%;
     background: rgba(47, 48, 58, 0.8);
     padding: 27px 0;
-    @include font ($fw:700, $lh:1.14);
+    @include font ($fw: 700, $lh: 1.14);
     text-align: center;
     text-transform: uppercase;
     color: var(--primary-white-color);

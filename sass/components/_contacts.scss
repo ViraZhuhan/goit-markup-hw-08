@@ -1,19 +1,31 @@
 .contacts {
     display: none;
-    @media screen and (min-width: $tablet) {
-    display: flex;
-    gap: 30px;
+    @include tablet {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    @include desktop {
+        gap: 30px;
+        flex-direction: row;
     }
 }
 
 .contacts__link {
     color: var(--title-text-color);
-    @extend %flex-align;
-    justify-content: center;
+    display: flex;
+    align-items: flex-start;
+
     @include font (14, 500, 1.14, 0.02);
     transition: color 250ms var(--timeng-function);
+
     &:hover,
     &:focus {
         color: var(--accent-color);
+    }
+
+    @include tablet {
+        align-items: center;
     }
 }
